@@ -3,16 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <h3>Download Center</h3>
+    <title>Bemiwy POS - Download Center</title>
+    <style>
+        :root {
+            --navy: #1B2035;
+            --blue: #1769AA;
+            --light-bg: #F4F8FD;
+            --text-dark: #18324B;
+            --text-light: #627A91;
+            --white: #FFFFFF;
+            --green: #25D366;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: var(--navy);
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav h1 {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 600;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 80px auto;
+            padding: 0 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 32px;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .download-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(23, 105, 170, 0.08);
+            border: 1px solid #D5E2F0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: transform 0.2s;
+        }
+
+        .download-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .platform-info {
+            text-align: left;
+        }
+
+        .platform-name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .file-type {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+
+        .btn-download {
+            background-color: var(--blue);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #125082;
+        }
+
+        .btn-download svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+    </style>
 </head>
 <body>
-    <p>Download and enjoy the software</p>
-    <p><a href="https://archive.org/download/release_20261106/Release.zip" download>Windows.exe</a></p>
-    <p><a href="https://archive.org/download/app-release_20261106/app-release.apk">Android.apk</a></p>
 
-    <p><a href="index.html">Home</a></p>
-    <p><a href="bugs.html">Bugs</a></p>
+    <nav>
+        <h1>BEMIWY POS</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="download.html">Download</a>
+            <a href="bugs.html">Bugs</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Download Center</h2>
+        <p class="subtitle">Download and enjoy the software on your preferred platform.</p>
+
+        <!-- Windows Card -->
+        <div class="download-card">
+            <div class="platform-info">
+                <div class="platform-name">Windows</div>
+                <div class="file-type">Release 1.0.0 (.exe)</div>
+            </div>
+            <a href="https://archive.org/download/release_20261106/Release.zip" download class="btn-download">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Download
+            </a>
+        </div>
+
+        <!-- Android Card -->
+        <div class="download-card">
+            <div class="platform-info">
+                <div class="platform-name">Android</div>
+                <div class="file-type">Release 1.0.0 (.apk)</div>
+            </div>
+            <a href="https://archive.org/download/app-release_20261106/app-release.apk" class="btn-download">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                Download
+            </a>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Bemiwy POS. All rights reserved.
+    </footer>
 
 </body>
-</html>
+    </html>
