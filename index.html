@@ -3,22 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <h3>Bemiwy</h3>
+    <title>Bemiwy POS - Home</title>
+    <style>
+        :root {
+            --navy: #1B2035;
+            --blue: #1769AA;
+            --light-bg: #F4F8FD;
+            --text-dark: #18324B;
+            --text-light: #627A91;
+            --white: #FFFFFF;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Top Navigation */
+        nav {
+            background-color: var(--navy);
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav h1 {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 600;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .hero-desc {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Platform Section */
+        .platforms-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .platforms-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 50px;
+        }
+
+        .platform-card {
+            background: var(--white);
+            border: 1px solid #D5E2F0;
+            border-radius: 12px;
+            padding: 16px 32px;
+            font-weight: 600;
+            color: var(--blue);
+            font-size: 16px;
+            box-shadow: 0 2px 8px rgba(23, 105, 170, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(23, 105, 170, 0.15);
+        }
+
+        /* Version & Links */
+        .version-text {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--blue);
+            color: var(--white);
+            box-shadow: 0 4px 12px rgba(23, 105, 170, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #125082;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--blue);
+            border: 2px solid var(--blue);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(23, 105, 170, 0.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+    </style>
 </head>
 <body>
-    <p>Bemiwy pos covers all the company needs accross all platforms</p>
-    <p>Platforms supported</p>
-    <pre>Windows</pre>
-    <pre>Android</pre>
-    <pre>Mac Os</pre>
-    <pre>IOS</pre>
-    <pre>Linux</pre>
 
-    <p>Release version 1.0.0</p>
+    <nav>
+        <h1>BEMIWY POS</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="download.html">Download</a>
+            <a href="bugs.html">Bugs</a>
+        </div>
+    </nav>
 
-    <p><a href="bugs.html">Bug</a></p>
-    <p><a href="download.html">GO to download</a></p>
-    
+    <div class="container">
+        <p class="hero-desc">Bemiwy POS covers all the company needs across all platforms.</p>
+        
+        <div class="platforms-title">Platforms Supported</div>
+        <div class="platforms-grid">
+            <div class="platform-card">Windows</div>
+            <div class="platform-card">Android</div>
+            <div class="platform-card">Mac OS</div>
+            <div class="platform-card">iOS</div>
+            <div class="platform-card">Linux</div>
+        </div>
+
+        <p class="version-text">Release version 1.0.0</p>
+
+        <div class="action-buttons">
+            <a href="download.html" class="btn btn-primary">Go to Download</a>
+            <a href="bugs.html" class="btn btn-outline">Report a Bug</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Bemiwy POS. All rights reserved.
+    </footer>
+
 </body>
-</html>
+    </html>
