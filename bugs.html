@@ -3,12 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <h3>Bugs Center</h3>
+    <title>Bemiwy POS - Bugs Center</title>
+    <style>
+        :root {
+            --navy: #1B2035;
+            --blue: #1769AA;
+            --light-bg: #F4F8FD;
+            --text-dark: #18324B;
+            --text-light: #627A91;
+            --white: #FFFFFF;
+            --green: #2E7D32;
+            --green-bg: #E8F5E9;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: var(--navy);
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav h1 {
+            color: var(--white);
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 600;
+            font-size: 14px;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 100px auto;
+            padding: 0 20px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .status-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 50px 30px;
+            box-shadow: 0 10px 30px rgba(23, 105, 170, 0.08);
+            border: 1px solid #D5E2F0;
+        }
+
+        .icon-check {
+            width: 80px;
+            height: 80px;
+            background-color: var(--green-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px auto;
+        }
+
+        .icon-check svg {
+            width: 40px;
+            height: 40px;
+            fill: var(--green);
+        }
+
+        h2 {
+            font-size: 28px;
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        p {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background-color: var(--blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background-color: #125082;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--blue);
+            border: 2px solid var(--blue);
+        }
+
+        .btn-outline:hover {
+            background-color: rgba(23, 105, 170, 0.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-light);
+            font-size: 13px;
+        }
+    </style>
 </head>
 <body>
-    <p>No bugs reported</p>
-    <a href="index.html">Home</a>
-    <a href="download.html">Download</a>
+
+    <nav>
+        <h1>BEMIWY POS</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="download.html">Download</a>
+            <a href="bugs.html">Bugs</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="status-card">
+            <div class="icon-check">
+                <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+            </div>
+            <h2>No Bugs Reported</h2>
+            <p>The system is running smoothly. There are currently no known issues or bugs reported for Bemiwy POS version 1.0.0.</p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-outline">Back to Home</a>
+                <a href="download.html" class="btn btn-primary">Go to Downloads</a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Bemiwy POS. All rights reserved.
+    </footer>
+
 </body>
-</html>
+                    </html>
