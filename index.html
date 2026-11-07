@@ -37,13 +37,31 @@
             align-items: center;
             justify-content: space-between;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
         }
 
-        nav h1 {
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-container img {
+            height: 32px;
+            border-radius: 6px;
+        }
+
+        .brand-container h1 {
             color: var(--white);
             font-size: 24px;
             font-weight: 800;
             letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
         }
 
         .nav-links a {
@@ -58,6 +76,70 @@
 
         .nav-links a:hover {
             opacity: 1;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            color: var(--white);
+            font-size: 28px;
+            user-select: none;
+        }
+
+        /* Mobile Slide-Over Menu */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.5);
+            z-index: 20;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -50vw;
+            width: 50vw;
+            height: 100vh;
+            background-color: var(--navy);
+            z-index: 30;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            transition: left 0.3s ease;
+            box-shadow: 4px 0 12px rgba(0,0,0,0.2);
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 12px;
+        }
+
+        .mobile-close {
+            color: var(--white);
+            font-size: 24px;
+            text-align: right;
+            cursor: pointer;
+            margin-bottom: 20px;
         }
 
         /* Main Container */
@@ -76,7 +158,6 @@
             line-height: 1.6;
         }
 
-        /* Platform Section */
         .platforms-title {
             font-size: 18px;
             font-weight: 700;
@@ -111,7 +192,6 @@
             box-shadow: 0 6px 16px rgba(23, 105, 170, 0.15);
         }
 
-        /* Version & Links */
         .version-text {
             font-size: 14px;
             color: var(--text-light);
@@ -131,6 +211,8 @@
             font-weight: 700;
             font-size: 16px;
             transition: background 0.2s;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
@@ -153,25 +235,128 @@
             background-color: rgba(23, 105, 170, 0.05);
         }
 
-        /* Footer */
+        /* Footer & Privacy Link */
         footer {
             text-align: center;
             padding: 30px;
             color: var(--text-light);
             font-size: 13px;
+            border-top: 1px solid #D5E2F0;
+            background-color: var(--white);
+        }
+
+        .privacy-link {
+            color: var(--blue);
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        /* Privacy Modal */
+        .modal {
+            display: none; 
+            position: fixed; 
+            z-index: 40; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(27, 32, 53, 0.7); 
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: left;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            color: var(--navy);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .modal-content h3 {
+            color: var(--blue);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .modal-content p {
+            color: var(--text-light);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 24px;
+            font-size: 28px;
+            color: var(--text-light);
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .close-modal:hover {
+            color: var(--navy);
+        }
+
+        /* Responsive Rules */
+        @media (max-width: 768px) {
+            nav {
+                padding: 16px 20px;
+            }
+            .nav-links {
+                display: none;
+            }
+            .hamburger {
+                display: block;
+            }
+            .action-buttons {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <h1>BEMIWY POS</h1>
+        <div class="brand-container">
+            <img src="bemiwy_logo.png" alt="Bemiwy Logo">
+            <h1>BEMIWY POS</h1>
+        </div>
+        
         <div class="nav-links">
             <a href="index.html">Home</a>
             <a href="download.html">Download</a>
             <a href="bugs.html">Bugs</a>
         </div>
+
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
     </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-close" onclick="toggleMenu()">&times;</div>
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="bugs.html">Bugs</a>
+    </div>
 
     <div class="container">
         <p class="hero-desc">Bemiwy POS covers all the company needs across all platforms.</p>
@@ -194,8 +379,64 @@
     </div>
 
     <footer>
-        &copy; 2026 Bemiwy POS. All rights reserved.
+        &copy; <span id="year"></span> Bemiwy POS. All rights reserved. 
+        <span class="privacy-link" onclick="openPrivacy()">Privacy Policy</span>
     </footer>
 
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closePrivacy()">&times;</span>
+            <h2>Privacy Policy</h2>
+            <p>Last updated: October 2026</p>
+
+            <h3>1. Information We Collect</h3>
+            <p>Bemiwy POS collects minimal data required to operate your point of sale system. This includes your company name, business email, and transaction data generated within the software. We do not sell your data to third parties.</p>
+
+            <h3>2. How We Use Your Data</h3>
+            <p>Your data is used solely to provide the POS services, sync your transactions across your devices, and provide customer support. All data is encrypted both in transit and at rest.</p>
+
+            <h3>3. Local Storage</h3>
+            <p>For the desktop and mobile applications, your data is stored locally on your device. If you enable cloud sync, your data is securely transferred to our servers using industry-standard encryption.</p>
+
+            <h3>4. Third-Party Services</h3>
+            <p>We may use third-party services for crash reporting and analytics to improve the app. These services do not have access to your financial or customer data.</p>
+
+            <h3>5. Your Rights</h3>
+            <p>You have the right to export, modify, or delete your data at any time directly from the settings panel of the Bemiwy POS application.</p>
+
+            <h3>6. Contact Us</h3>
+            <p>If you have any questions about this Privacy Policy, please contact us via the WhatsApp support link provided in the app.</p>
+        </div>
+    </div>
+
+    <script>
+        // Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Hamburger Menu Logic
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+            document.getElementById('mobileOverlay').classList.toggle('active');
+        }
+
+        // Privacy Modal Logic
+        function openPrivacy() {
+            document.getElementById('privacyModal').style.display = 'flex';
+        }
+
+        function closePrivacy() {
+            document.getElementById('privacyModal').style.display = 'none';
+        }
+
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            var modal = document.getElementById('privacyModal');
+            if (event.target == modal) {
+                closePrivacy();
+            }
+        }
+    </script>
+
 </body>
-    </html>
+                </html>
