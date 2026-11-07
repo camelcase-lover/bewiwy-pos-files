@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bemiwy POS - Home</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- OPEN GRAPH (Social Media Preview & Google Search) -->
+    <meta property="og:title" content="Bemiwy POS">
+    <meta property="og:description" content="Bemiwy POS covers all the company needs across all platforms.">
+    <meta property="og:image" content="bemiwy_logo.png">
+    <meta property="og:type" content="website">
+
     <style>
         :root {
             --navy: #1B2035;
@@ -29,7 +39,6 @@
             min-height: 100vh;
         }
 
-        /* Top Navigation */
         nav {
             background-color: var(--navy);
             padding: 16px 40px;
@@ -86,7 +95,6 @@
             user-select: none;
         }
 
-        /* Mobile Slide-Over Menu */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
@@ -142,7 +150,6 @@
             margin-bottom: 20px;
         }
 
-        /* Main Container */
         .container {
             max-width: 900px;
             margin: 60px auto;
@@ -235,7 +242,6 @@
             background-color: rgba(23, 105, 170, 0.05);
         }
 
-        /* Footer & Links */
         footer {
             text-align: center;
             padding: 30px;
@@ -257,7 +263,6 @@
             color: #125082;
         }
 
-        /* Modal Base */
         .modal {
             display: none; 
             position: fixed; 
@@ -319,20 +324,11 @@
             color: var(--navy);
         }
 
-        /* Responsive Rules */
         @media (max-width: 768px) {
-            nav {
-                padding: 16px 20px;
-            }
-            .nav-links {
-                display: none;
-            }
-            .hamburger {
-                display: block;
-            }
-            .action-buttons {
-                flex-direction: column;
-            }
+            nav { padding: 16px 20px; }
+            .nav-links { display: none; }
+            .hamburger { display: block; }
+            .action-buttons { flex-direction: column; }
         }
     </style>
 </head>
@@ -353,7 +349,6 @@
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-close" onclick="toggleMenu()">&times;</div>
@@ -394,22 +389,16 @@
             <span class="close-modal" onclick="closePrivacy()">&times;</span>
             <h2>Privacy Policy</h2>
             <p>Last updated: October 2026</p>
-
             <h3>1. Information We Collect</h3>
             <p>Bemiwy POS collects minimal data required to operate your point of sale system. This includes your company name, business email, and transaction data generated within the software. We do not sell your data to third parties.</p>
-
             <h3>2. How We Use Your Data</h3>
             <p>Your data is used solely to provide the POS services, sync your transactions across your devices, and provide customer support. All data is encrypted both in transit and at rest.</p>
-
             <h3>3. Local Storage</h3>
             <p>For the desktop and mobile applications, your data is stored locally on your device. If you enable cloud sync, your data is securely transferred to our servers using industry-standard encryption.</p>
-
             <h3>4. Third-Party Services</h3>
             <p>We may use third-party services for crash reporting and analytics to improve the app. These services do not have access to your financial or customer data.</p>
-
             <h3>5. Your Rights</h3>
             <p>You have the right to export, modify, or delete your data at any time directly from the settings panel of the Bemiwy POS application.</p>
-
             <h3>6. Contact Us</h3>
             <p>If you have any questions about this Privacy Policy, please contact us via the WhatsApp support link provided in the app.</p>
         </div>
@@ -421,38 +410,29 @@
             <span class="close-modal" onclick="closeTerms()">&times;</span>
             <h2>Terms & Conditions</h2>
             <p>Last updated: October 2026</p>
-
             <h3>1. Acceptance of Terms</h3>
             <p>By downloading, installing, or using Bemiwy POS, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use the software.</p>
-
             <h3>2. License Grant</h3>
             <p>Bemiwy POS grants you a limited, non-exclusive, non-transferable license to use the software for your internal business purposes. You may not resell, distribute, or reverse-engineer the software.</p>
-
             <h3>3. User Responsibilities</h3>
             <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to use the software in compliance with all applicable local laws.</p>
-
             <h3>4. Data Backup</h3>
             <p>While Bemiwy POS provides robust data management, you are ultimately responsible for maintaining regular backups of your local data. We are not liable for data loss resulting from hardware failure.</p>
-
             <h3>5. Limitation of Liability</h3>
             <p>In no event shall Bemiwy POS be liable for any indirect, incidental, or consequential damages arising out of the use or inability to use the software.</p>
-
             <h3>6. Changes to Terms</h3>
             <p>We reserve the right to modify these terms at any time. Continued use of the software after changes constitutes acceptance of the new terms.</p>
         </div>
     </div>
 
     <script>
-        // Dynamic Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Hamburger Menu Logic
         function toggleMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
             document.getElementById('mobileOverlay').classList.toggle('active');
         }
 
-        // Privacy Modal Logic
         function openPrivacy() {
             document.getElementById('privacyModal').style.display = 'flex';
         }
@@ -461,7 +441,6 @@
             document.getElementById('privacyModal').style.display = 'none';
         }
 
-        // Terms Modal Logic
         function openTerms() {
             document.getElementById('termsModal').style.display = 'flex';
         }
@@ -470,18 +449,12 @@
             document.getElementById('termsModal').style.display = 'none';
         }
 
-        // Close modals if user clicks outside of them
         window.onclick = function(event) {
             var privacyModal = document.getElementById('privacyModal');
             var termsModal = document.getElementById('termsModal');
-            if (event.target == privacyModal) {
-                closePrivacy();
-            }
-            if (event.target == termsModal) {
-                closeTerms();
-            }
+            if (event.target == privacyModal) closePrivacy();
+            if (event.target == termsModal) closeTerms();
         }
     </script>
-
 </body>
-                                          </html>
+    </html>
