@@ -4,6 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bemiwy POS - Download Center</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- OPEN GRAPH -->
+    <meta property="og:title" content="Download Bemiwy POS">
+    <meta property="og:description" content="Download Bemiwy POS for Windows and Android.">
+    <meta property="og:image" content="bemiwy_logo.png">
+    <meta property="og:type" content="website">
+
     <style>
         :root {
             --navy: #1B2035;
@@ -85,7 +95,6 @@
             user-select: none;
         }
 
-        /* Mobile Slide-Over Menu */
         .mobile-menu-overlay {
             position: fixed;
             top: 0;
@@ -252,7 +261,6 @@
         <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
     </nav>
 
-    <!-- Mobile Menu -->
     <div class="mobile-menu-overlay" id="mobileOverlay" onclick="toggleMenu()"></div>
     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-close" onclick="toggleMenu()">&times;</div>
@@ -286,7 +294,6 @@
                 Download
             </a>
         </div>
-
     </div>
 
     <footer>
@@ -294,15 +301,11 @@
     </footer>
 
     <script>
-        // Dynamic Year
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Hamburger Menu Logic
         function toggleMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
             document.getElementById('mobileOverlay').classList.toggle('active');
         }
     </script>
-
 </body>
-</html>
+    </html>
